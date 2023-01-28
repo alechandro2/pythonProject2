@@ -1,12 +1,13 @@
-class Cat:
-    species = 'кот'
-    def __init__(self, name, gender, age):
-        self.name = name
-        self.gender = gender
-        self.age = age
-baron = Cat('Барон', 'мальчик', 2)
-sam = Cat('Сэм', 'мальчик', 2)
-print(f'Барон - {baron.__class__.species}')
-print(f'Cэм - {baron.__class__.species}')
-print(f'{baron.name}-{baron.gender}-{baron.age} Сибирская кошка')
-print(f'{sam.name}-{sam.gender}-{sam.age} Сибирская кошка')
+class Rectangle:
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+    def get_area(self):
+        return self.a * self.b
+
+from rectangle import Rectangle, Square
+
+rect_1 = Rectangle(3,4)
+rect_2 = Rectangle(12,5)
+print(rect_1.get_area())
+print(rect_2.get_area())
