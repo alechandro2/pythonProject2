@@ -1,13 +1,24 @@
-class Rectangle:
-    def __init__(self,a,b):
-        self.a = a
-        self.b = b
-    def get_area(self):
-        return self.a * self.b
+def p(n):
+    if n == 0:
+        return
+    else:
+        p(n-1)
+        print(n)
+p(5)
 
-from rectangle import Rectangle, Square
+def par_checker(string):
+stack = []  # инициализируем стек
 
-rect_1 = Rectangle(3,4)
-rect_2 = Rectangle(12,5)
-print(rect_1.get_area())
-print(rect_2.get_area())
+for s in string:  # читаем строку посимвольно
+    if s == "(":  # если открывающая скобка,
+        stack.append(s)  # добавляем её в стек
+    elif s == ")":
+        # если встретилась закрывающая скобка, то проверяем
+        # пуст ли стек и является ли верхний элемент — открывающей скобкой
+        if len(stack) > 0 and stack[-1] == "(":
+            stack.pop()  # удаляем из стека
+        else:  # иначе завершаем функцию с False
+            return False
+# если стек пустой, то незакрытых скобок не осталось
+# значит, возвращаем True, иначе — False
+return len(stack) == 0
