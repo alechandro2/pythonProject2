@@ -1,3 +1,6 @@
+import math
+
+
 class Rectangle:
     def __init__(self,a,b):
         self.a = a
@@ -12,11 +15,7 @@ class Square:
         return self.a ** 2
 
 class Circle:
-    def __init__(self,r):
-        self.r = r
-    def get_area_circle(self):
-        return self.r * 2 * 3.14159
-
-
-
-
+    def __init__(self,R):
+        return self.R = R
+    def get_area_circle
+        return = self.R**2 * math.pi
