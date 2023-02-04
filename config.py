@@ -1,4 +1,4 @@
-TOKEN = '5948134449:AAFegcz8DxAr9e4TYsqmnoH2a6A05aGE_aU'
+TOKEN = '6050657135:AAGQRkSrvQsvI7-NEi-fuDW5JBKVcB-J4Po'
 
 keys = {
     'биткоин': 'BTC',
