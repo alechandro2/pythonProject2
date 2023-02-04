@@ -9,5 +9,5 @@ keys = {
 }
 
 
-TIMEZONE = 'Rostov on Don'
-TIMEZONE_COMMON_NAME = 'Rostov on Don'
+TIMEZONE = 'Voronezh'
+TIMEZONE_COMMON_NAME = 'Voronezh'
