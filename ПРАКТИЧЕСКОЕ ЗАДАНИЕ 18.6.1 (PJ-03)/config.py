@@ -8,5 +8,5 @@ keys = {
     'евро': 'EUR'
 }
 
-Timezone = 'Voronezh'
-Timezone 'Voronezh'
+TIMEZONE = 'VORONEZH'
+TIMEZONE_COMMON_NAME = 'VORONEZH'
