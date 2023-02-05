@@ -13,7 +13,7 @@ def convert(message: telebot.types.Message):
             raise APIException('Количество параметров не совпадает с форматом ввода.\n')
 
         quote, base, amount = values
-        total_base = CryptoConverter.convert(quote, base, amount)
+        total_base = convert(quote, base, amount)
     except APIException as e:
         bot.reply_to(message, f'Ошибка пользователя. \n{e} Как надо?: /help')
     except Exception as e:
