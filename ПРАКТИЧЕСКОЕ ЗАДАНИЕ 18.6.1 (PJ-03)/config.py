@@ -1,4 +1,6 @@
-TOKEN = '6050657135:AAGQRkSrvQsvI7-NEi-fuDW5JBKVcB-J4Po'
+import telebot
+
+TOKEN = '5786288318:AAHUlg3nmN5bdLSJRNhDBZ5JFG8pS1VDW8s'
 
 keys = {
     'биткоин': 'BTC',
