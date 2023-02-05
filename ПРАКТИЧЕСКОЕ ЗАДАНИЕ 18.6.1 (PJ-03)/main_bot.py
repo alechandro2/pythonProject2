@@ -1,13 +1,12 @@
 import telebot
-
 from config import keys, TOKEN
-from extentions import APIException
+from extensions import APIException, CryptoConverter
 
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'help'])
 def help(message: telebot.types.Message):
-    text = 'Привет! Я бот, который конвертирует валюту. Введите команду в формате:\n <Название валюты(какую)> \
+    text = 'Приветствую Вас ! Я бот-конвертер валют . Введите команду в формате:\n <Название валюты(какую)> \
  <Название валюты(в какую)> <Количество переводимой валюты> \n Показать список доступной валюты: /values'
     bot.reply_to(message, text)
 
@@ -20,7 +19,7 @@ def values(message: telebot.types.Message):
         text = '\n'.join((text, key, ))
     bot.reply_to(message, text)
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['text', 1])
 def convert(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
@@ -29,7 +28,7 @@ def convert(message: telebot.types.Message):
             raise APIException('Количество параметров не совпадает с форматом ввода.\n')
 
         quote, base, amount = values
-        total_base = convert(quote, base, amount)
+        total_base = CryptoConverter.convert(quote, base, amount)
     except APIException as e:
         bot.reply_to(message, f'Ошибка пользователя. \n{e} Как надо?: /help')
     except Exception as e:
